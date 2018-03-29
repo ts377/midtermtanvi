@@ -17,6 +17,6 @@ class IntCarTest extends TestCase
     public function testExample()
     {
         $car=Car::find(1);
-        $this->assertInternalType('int',$car->year);
+        $this->assertInternalType('string',$car->year);
     }
 }

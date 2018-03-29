@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Car;
 
-class CountUserTest extends TestCase
+class CkeckMakeCarTest extends TestCase
 {
     /**
      * A basic test example.
@@ -16,8 +16,7 @@ class CountUserTest extends TestCase
      */
     public function testExample()
     {
-        $user=User::all();
-      $Count = count($user);
-       $this->assertEquals(68,$Count);
+        $car = Car::find(5);
+        $this->assertContains($car->make,['ford','toyota','honda']);
     }
 }
