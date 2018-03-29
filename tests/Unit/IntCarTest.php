@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Car;
 
-class CountCarTest extends TestCase
+class IntCarTest extends TestCase
 {
     /**
      * A basic test example.
@@ -16,8 +16,7 @@ class CountCarTest extends TestCase
      */
     public function testExample()
     {
-        $car=Car::all();
-        $Count = count($car);
-        $this->assertEquals(76,$Count);
+        $car=Car::find(1);
+        $this->assertInternalType('int',$car->year);
     }
 }

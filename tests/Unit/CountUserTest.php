@@ -17,7 +17,7 @@ class CountUserTest extends TestCase
     public function testExample()
     {
         $user=User::all();
-        $Count = count($user);
-        $this->assertEquals(55,$Count);
+      $Count = count($user);
+       $this->assertEquals(58,$Count);
     }
 }
