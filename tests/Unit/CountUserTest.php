@@ -2,11 +2,12 @@
 
 namespace Tests\Unit;
 
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class InsertUserTest extends TestCase
+class CountUserTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,11 +16,8 @@ class InsertUserTest extends TestCase
      */
     public function testExample()
     {
-        $user=new User();
-        $user->name='apple';
-        $user->email='applesingh@example.com';
-        $user->password='applesingh2018';
-        $user->remember_token='XXXXXXX190';
-        $this->assertTrue($user->save());
+        $user=User::all();
+        $Count = count($user);
+        $this->assertEquals(52,$Count);
     }
 }
