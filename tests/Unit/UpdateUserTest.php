@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
 
-class InsertUserTest extends TestCase
+class UpdateUserTest extends TestCase
 {
     /**
      * A basic test example.
@@ -16,12 +16,12 @@ class InsertUserTest extends TestCase
      */
     public function testExample()
     {
-        $user=new User();
-        $user->name='Tanvi';
-        $user->email='tanvisingh@example.com';
-        $user->password='tanvisingh2018';
-        $user->remember_token='XXXXXXX123';
-        $this->assertTrue($user->save());
+        $user = User::find(45);
 
+// update record
+        $user->name = 'Steve Smith';
+        $user->save();
+
+        $this->assertTrue($user->update());
     }
 }
