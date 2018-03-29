@@ -17,13 +17,11 @@ class InsertUserTest extends TestCase
     public function testExample()
     {
         $user=new User();
-        $user->name='Steve Smith';
-        $user->email='SteveSmith@example.org';
-        $user->password='utrywrecsx';
-        $user->remember_token='XXXXXXX000';
-
+        $user->name='Aakash';
+        $user->email='Aakashsingh@example.com';
+        $user->password='akashsingh2018';
+        $user->remember_token='YYYYY2345';
         $this->assertTrue($user->save());
-
 
     }
 }

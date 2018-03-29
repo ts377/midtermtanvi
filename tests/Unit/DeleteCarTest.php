@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Car;
 
-class CountUserTest extends TestCase
+class DeleteCarTest extends TestCase
 {
     /**
      * A basic test example.
@@ -16,8 +16,11 @@ class CountUserTest extends TestCase
      */
     public function testExample()
     {
-        $user=User::all();
-        $Count = count($user);
-        $this->assertEquals(54,$Count);
+        $car=new Car();
+        $car->make='toyota';
+        $car->model='k';
+        $car->year='2010';
+        $car->save();
+        $this->assertTrue($car->delete());
     }
 }
